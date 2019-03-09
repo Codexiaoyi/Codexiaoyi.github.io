@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[宿舍空间]]></title>
+    <url>%2F2019%2F03%2F10%2F%E5%AE%BF%E8%88%8D%E7%A9%BA%E9%97%B4%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[搭建一个HEXO博客（一）]]></title>
     <url>%2F2019%2F03%2F09%2F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAHEXO%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[创建一个静态博客：1.先安装Git（不太理解有没有用，可以先不装试一试）​ 下载msysgit 2.安装node.js（hexo需要node来支持）​ 在nodejs.org里面安装（LTS）的那个，然后安装就好了，安装的时候新建一个新的文件夹。 3.可以查看node的版本和npm的版本​ 命令：node -v​ npm -v​ 注意：这里要切换到刚才的目录下面 4.利用npm安装一个淘宝的cnpm源（由于国内安装镜像太慢）​ 命令：npm install -g cnpm –registry=https//registry.npm.taobao.org 5.cnpm安装hexo博客框架​ 命令:cnpm install -g hexo-cli 6.建立一个空的文件夹​ 命令:mkdir blog 7.进入blog文件夹​ 命令：cd blog 8.初始化hexo​ 命令：hexo init（遇到问题就删掉blog重新来）​ 注意：遇到fatal:unable 等问题的话就输入命令：git config –global http.sslVerify false 9.启动hexo​ 命令：hexo s 10.然后可以在网页上打开显示的地址（localhost:4000）11.生成一个新的博客文章​ 命令：hexo n “我的第一篇博客文章” ​ 注意：发表文章时遇到的常见错误 https://blog.csdn.net/yongf2014/article/details/50016783 12.进入现实的相关目录中即可编写​ 这里我用的notepad++直接打开编写的 13.清理并且重新生成然后再启动就会发现更新了​ 命令：清理hexo clean​ 生成hexo g 接下来我们要将本地的博客部署到github上去]]></content>

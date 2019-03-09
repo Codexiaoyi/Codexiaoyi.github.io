@@ -1939,7 +1939,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dfff66;
+  background: #d1464b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3236,4 +3236,10 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("F:Logblogthemesnextsourceimagestimg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
