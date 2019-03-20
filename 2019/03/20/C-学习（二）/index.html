@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="C#,">
+  <meta name="keywords" content="C#学习,">
 
 
 
@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="C#学习记录(一)抽象类abstract1.抽象类不能实例化。 2.抽象类的作用：提供一个可供多个派生类共享的通用基类定义。 泛型generic1.使用泛型可以是“算法”重用。只是数据类型发生了改变。 2.使用泛型可以使用约束条件： 12345678910public class MyClass&amp;lt;T, K, V, W, X&amp;gt;        where T : struct //约束T必">
-<meta name="keywords" content="C#">
+<meta name="description" content="C#学习(二)事件(通过委托实现)1.加了event关键字实现事件机制的好处：用了event事件，不可以修改事件已经注册的值；不可以冒充进行事件通知了。 事件的语言支持：用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。1.定义使用event关键字的事件。 1public event EventHandler&amp;lt;FileListArgs&amp;gt; Progress; 2.想要引发事件时">
+<meta name="keywords" content="C#学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C#学习(一)">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/C-学习-一/index.html">
+<meta property="og:title" content="C#学习（二）">
+<meta property="og:url" content="http://yoursite.com/2019/03/20/C-学习（二）/index.html">
 <meta property="og:site_name" content="Codexiaoyi的个人博客">
-<meta property="og:description" content="C#学习记录(一)抽象类abstract1.抽象类不能实例化。 2.抽象类的作用：提供一个可供多个派生类共享的通用基类定义。 泛型generic1.使用泛型可以是“算法”重用。只是数据类型发生了改变。 2.使用泛型可以使用约束条件： 12345678910public class MyClass&amp;lt;T, K, V, W, X&amp;gt;        where T : struct //约束T必">
+<meta property="og:description" content="C#学习(二)事件(通过委托实现)1.加了event关键字实现事件机制的好处：用了event事件，不可以修改事件已经注册的值；不可以冒充进行事件通知了。 事件的语言支持：用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。1.定义使用event关键字的事件。 1public event EventHandler&amp;lt;FileListArgs&amp;gt; Progress; 2.想要引发事件时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T04:48:36.972Z">
+<meta property="og:updated_time" content="2019-03-20T01:39:33.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C#学习(一)">
-<meta name="twitter:description" content="C#学习记录(一)抽象类abstract1.抽象类不能实例化。 2.抽象类的作用：提供一个可供多个派生类共享的通用基类定义。 泛型generic1.使用泛型可以是“算法”重用。只是数据类型发生了改变。 2.使用泛型可以使用约束条件： 12345678910public class MyClass&amp;lt;T, K, V, W, X&amp;gt;        where T : struct //约束T必">
+<meta name="twitter:title" content="C#学习（二）">
+<meta name="twitter:description" content="C#学习(二)事件(通过委托实现)1.加了event关键字实现事件机制的好处：用了event事件，不可以修改事件已经注册的值；不可以冒充进行事件通知了。 事件的语言支持：用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。1.定义使用event关键字的事件。 1public event EventHandler&amp;lt;FileListArgs&amp;gt; Progress; 2.想要引发事件时">
 
 
 
@@ -153,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/17/C-学习-一/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/20/C-学习（二）/">
 
 
 
 
 
-  <title>C#学习(一) | Codexiaoyi的个人博客</title>
+  <title>C#学习（二） | Codexiaoyi的个人博客</title>
   
 
 
@@ -308,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/C-学习-一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/C-学习（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Codexiaoyi">
@@ -325,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C#学习(一)</h1>
+          <h1 class="post-title" itemprop="name headline">C#学习（二）</h1>
         
 
         <div class="post-meta">
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-17T12:47:54+08:00">
-                2019-03-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-20T09:38:17+08:00">
+                2019-03-20
               </time>
             
 
@@ -356,8 +356,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/17/C-学习-一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/17/C-学习-一/" itemprop="commentCount"></span>
+                <a href="/2019/03/20/C-学习（二）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/20/C-学习（二）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,7 +365,7 @@
 
           
           
-             <span id="/2019/03/17/C-学习-一/" class="leancloud_visitors" data-flag-title="C#学习(一)">
+             <span id="/2019/03/20/C-学习（二）/" class="leancloud_visitors" data-flag-title="C#学习（二）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -396,45 +396,50 @@
       
 
       
-        <h1 id="C-学习记录-一"><a href="#C-学习记录-一" class="headerlink" title="C#学习记录(一)"></a>C#学习记录(一)</h1><h2 id="抽象类abstract"><a href="#抽象类abstract" class="headerlink" title="抽象类abstract"></a>抽象类abstract</h2><p>1.抽象类不能实例化。</p>
-<p>2.抽象类的作用：提供一个可供多个派生类共享的通用基类定义。</p>
-<h2 id="泛型generic"><a href="#泛型generic" class="headerlink" title="泛型generic"></a>泛型generic</h2><p>1.使用泛型可以是“算法”重用。只是数据类型发生了改变。</p>
-<p>2.使用泛型可以使用约束条件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class MyClass&lt;T, K, V, W, X&gt;</span><br><span class="line">        where T : struct //约束T必须是值类型</span><br><span class="line">        where K : class //约束K必须是引用类型</span><br><span class="line">        where V : IComparable //约束V必须是接口类型</span><br><span class="line">        where W : K //要求W必须是K或者K类型的子类</span><br><span class="line">        where X : class, new()//对于一个类型要是有多个约束就必须要有逗号隔开</span><br><span class="line">        //当有多个约束和new一起使用的时候，new类型必须写在最后</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="foreach遍历"><a href="#foreach遍历" class="headerlink" title="foreach遍历"></a>foreach遍历</h2><p>1.凡是有GetEnumerator()方法的都可以用foreach来遍历(实际foreach就是调用了一个枚举器)</p>
-<p>2.实现IEnumerable接口的类才叫枚举器</p>
-<h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p>1.委托是一种像类一样的数据类型，委托是方法的传递。</p>
-<p>2.委托需要指向需要被委托的函数，其返回值和参数需要与被委托的函数的一样。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public delegate void DekSayHi(string name);</span><br></pre></td></tr></table></figure>
-<p>3.委托要定义在命名空间中，和方法是一个级别的。</p>
-<p>4.使用委托：</p>
-<p>​    ①声明委托变量。</p>
-<p>​    ②委托是一个引用类型，与类相似，所以当声明委托变量后，如果不赋值，则该委托变量为null。所以在使用委托变量前最好做非空检验weituo!=null</p>
-<p>​    ③委托类型的变量只能赋值一个委托类型的对象。</p>
-<h4 id="委托实例："><a href="#委托实例：" class="headerlink" title="委托实例："></a>委托实例：</h4><p>​    1)Delegrate1中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">namespace Delegate1</span><br><span class="line">&#123;</span><br><span class="line">    public delegate void MyNameDelegate();</span><br><span class="line">    public class Test</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">    	&#125;</span><br><span class="line">        public void MyName(MyNameDelegate go)//传入一个go(类似形参)方法，签名与委托定义相同的</span><br><span class="line">        &#123;</span><br><span class="line">            string[] str = &#123; &quot;lin&quot;, &quot;zhou&quot;, &quot;zhang&quot; &#125;;</span><br><span class="line">            for (int i = 0; i &lt; str.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(str[i]);</span><br><span class="line">                go();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    2)Delegate2中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">using Delegate1;</span><br><span class="line">namespace Delegate2</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Test test = new Test();</span><br><span class="line">            test.MyName(kkk);//将kkk()传给MyName()</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">        public static void kkk()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;K头!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    3)执行结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lin</span><br><span class="line">K头!</span><br><span class="line">zhou</span><br><span class="line">K头!</span><br><span class="line">zhang</span><br><span class="line">K头!</span><br></pre></td></tr></table></figure>
-<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p>1.不需要传递数据类型</p>
-<p>2.语法：</p>
-<p>​    委托名  方法名  =  (参数)  =&gt;  {方法体} ;</p>
-<h2 id="泛型委托"><a href="#泛型委托" class="headerlink" title="泛型委托"></a>泛型委托</h2><p>(Action、Action<t>、Fun&lt;&gt;)</t></p>
-<p>1.需要保存一个无参数，无返回值的一个方法用到Action</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Action action1 = new Action(M1);</span><br><span class="line">            action1();</span><br><span class="line">            Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<p>2.需要保存一个有参数，但没有返回值的方法可以用到Action<t></t></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Action&lt;string&gt; action = (obj) =&gt; &#123; Console.WriteLine(obj); &#125;;</span><br><span class="line">            action(&quot;ok&quot;);</span><br><span class="line">            Action&lt;string, int&gt; action2 = (x, y) =&gt; &#123; Console.WriteLine(x + y); &#125;;</span><br><span class="line">            action2(&quot;lin&quot;, 5);</span><br><span class="line">            Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<p>3.需要保存一个有返回值的的方法可以用Func<tresult>、Func&lt;T1,T2,TResult&gt;,即最后一个参数类型表示返回值。</tresult></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    Func&lt;int, int, int, int&gt; func = M1;</span><br><span class="line">    int n = func(1, 8, 9);</span><br><span class="line">    Console.WriteLine(n);</span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static int M1(int x, int y, int z)</span><br><span class="line">&#123;</span><br><span class="line">    return x + y + z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="索引器"><a href="#索引器" class="headerlink" title="索引器"></a>索引器</h2><p>1.概念：</p>
-<p>​    允许一个对象可以像数组一样被索引。当为类定义一个索引器时，该类的行为就会像一个虚拟数组一样。可以使用数组访问运算符([])来访问该类的实例。</p>
-<p>2.索引器的访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var item = someObject[&quot;key&quot;];</span><br><span class="line">someObject[&quot;AnotherKey&quot;] = item;</span><br></pre></td></tr></table></figure>
-<p>3.索引器的声明：使用this关键字作为属性名声明索引器，并在方括号内声明参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int this[string key]</span><br><span class="line">&#123;</span><br><span class="line">    get &#123; return storage.Find(key); &#125;//返回index指定的值</span><br><span class="line">    set &#123; storage.SetAt(key, value); &#125;//设置index的值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4.索引器的用途：类似于属性，可以使用get和set访问器来定义索引器。但是，属性返回或设置一个特定的数据成员，而索引器返回或设置对象实例的一个特定值。换句话说就是把实例数据分为更小的部分，并索引每个部分，获取或设置每个部分。</p>
-
+        <h1 id="C-学习-二"><a href="#C-学习-二" class="headerlink" title="C#学习(二)"></a>C#学习(二)</h1><h2 id="事件-通过委托实现"><a href="#事件-通过委托实现" class="headerlink" title="事件(通过委托实现)"></a>事件(通过委托实现)</h2><p>1.加了event关键字实现事件机制的好处：用了event事件，不可以修改事件已经注册的值；不可以冒充进行事件通知了。</p>
+<h4 id="事件的语言支持："><a href="#事件的语言支持：" class="headerlink" title="事件的语言支持："></a>事件的语言支持：</h4><h5 id="用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。"><a href="#用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。" class="headerlink" title="用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。"></a>用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。</h5><p>1.定义使用event关键字的事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public event EventHandler&lt;FileListArgs&gt; Progress;</span><br></pre></td></tr></table></figure>
+<p>2.想要引发事件时，使用委托调用语法调用事件处理程序：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Progress?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> FileListArgs(file));</span><br></pre></td></tr></table></figure>
+<p>如<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/delegates-patterns" target="_blank" rel="noopener">委托</a>部分中所介绍的那样，?. 运算符可以轻松确保在事件没有订阅服务器时不引发事件。</p>
+<p>3.通过使用 <code>+=</code> 运算符订阅事件：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EventHandler&lt;FileListArgs&gt; onProgress = (sender, eventArgs) =&gt; </span><br><span class="line">    Console.WriteLine(eventArgs.FoundFile);</span><br><span class="line">lister.Progress += onProgress;</span><br></pre></td></tr></table></figure>
+<p>处理程序方法通常为前缀“On”，后跟事件名称，如上所示。</p>
+<p>4.使用 <code>-=</code> 运算符取消订阅：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lister.Progress -= onProgress;</span><br></pre></td></tr></table></figure>
+<p>请务必注意，我为表示事件处理程序的表达式声明了一个局部变量。 这将确保取消订阅删除该处理程序。 如果使用的是 lambda 表达式的主体，则将尝试删除从未附加过的处理程序，此操作为无效操作。</p>
+<p>5.不能使用=赋值，而委托可以。  </p>
+<p>6.事件在外部不能直接调用，只能在类的定义内部触发。 </p>
+<h2 id="程序集"><a href="#程序集" class="headerlink" title="程序集"></a>程序集</h2><h4 id="什么是程序集？"><a href="#什么是程序集？" class="headerlink" title="什么是程序集？"></a>什么是程序集？</h4><p>.net中dll和exe都是程序集，相当于java里面的jar包，是一堆类的打包形式。</p>
+<h4 id="程序集的包含"><a href="#程序集的包含" class="headerlink" title="程序集的包含"></a>程序集的包含</h4><p>1.类型元数据（描述在代码中定义的每一类型和成员二进制形式）</p>
+<p>2.程序集元数据（程序集清单、版本号、名称等等）</p>
+<p>3.IL代码（这些都被装在exe或dll中）</p>
+<p>4.资源文件</p>
+<p>每个程序集都有自己的名称、版本等信息。这些信息可以通过AssemblyInfo.cs文件来自己定义。</p>
+<h4 id="使用程序集的好处？"><a href="#使用程序集的好处？" class="headerlink" title="使用程序集的好处？"></a>使用程序集的好处？</h4><p>1.程序中只引用必须的程序集、减小程序的尺寸。</p>
+<p>2.程序集可以封装一些代码，只提供必要的访问接口。</p>
+<h4 id="如何添加程序集的引用？"><a href="#如何添加程序集的引用？" class="headerlink" title="如何添加程序集的引用？"></a>如何添加程序集的引用？</h4><p>1.添加路径、项目引用、GAC（全局程序集缓存）</p>
+<p>2.不能循环添加引用</p>
+<p>3.在c#中添加其他语言编写的dll文件的引用。（参考P/Invoke，在.net中调用非程序集的dll） extern</p>
+<h2 id="反射-Reflection"><a href="#反射-Reflection" class="headerlink" title="反射(Reflection)"></a>反射(Reflection)</h2><h2 id="c-中的invoke-方法"><a href="#c-中的invoke-方法" class="headerlink" title="c#中的invoke()方法"></a>c#中的invoke()方法</h2><h2 id="XML-可扩展标记语言"><a href="#XML-可扩展标记语言" class="headerlink" title="XML(可扩展标记语言)"></a>XML(可扩展标记语言)</h2><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>1.第一行要有编码格式标记</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="GB2312"?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.取消&gt;的标签作用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;![CDATA[xiang&lt;sss&gt;lll&lt;ooo&gt;]]&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Linq-To-XML：写"><a href="#Linq-To-XML：写" class="headerlink" title="Linq To XML：写"></a>Linq To XML：写</h4><p>1.使用XmlDocument</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">region</span> 通过编程实现XML写入</span></span><br><span class="line">    <span class="comment">//1.在内存中构建一个Dom对象</span></span><br><span class="line">    XmlDocument xmlDoc = <span class="keyword">new</span> XmlDocument();</span><br><span class="line">    <span class="comment">//增加一个文档说明</span></span><br><span class="line">    XmlDeclaration xmlDeclaration = xmlDoc.CreateXmlDeclaration(<span class="string">"1.0"</span>,<span class="string">"utf-8"</span>,<span class="string">"yes"</span>);</span><br><span class="line">    xmlDoc.AppendChild(xmlDeclaration);</span><br><span class="line">    <span class="comment">//为文档增加一个根元素</span></span><br><span class="line">    XmlElement rootElement = xmlDoc.CreateElement(<span class="string">"school"</span>);</span><br><span class="line">    xmlDoc.AppendChild(rootElement);</span><br><span class="line">    XmlElement xmlClasselement = xmlDoc.CreateElement(<span class="string">"class"</span>);</span><br><span class="line">    <span class="comment">//增加属性</span></span><br><span class="line">    XmlAttribute xmlClassattribute = xmlDoc.CreateAttribute(<span class="string">"id"</span>);</span><br><span class="line">    xmlClassattribute.Value=<span class="string">"1"</span>;</span><br><span class="line">    xmlClasselement.Attributes.Append(xmlClassattribute);</span><br><span class="line"></span><br><span class="line">    rootElement.AppendChild(xmlClasselement);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//为class里面添加student元素以此类推</span></span><br><span class="line">    <span class="comment">//.......</span></span><br><span class="line">    <span class="comment">//将Dom对象写入xml文件中</span></span><br><span class="line">    xmlDoc.Save(<span class="string">"school.xml"</span>);</span><br><span class="line">    MessageBox.Show(<span class="string">"ok!"</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endregion</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="Excel的导入与导出"><a href="#Excel的导入与导出" class="headerlink" title="Excel的导入与导出"></a>Excel的导入与导出</h2><p>1.创建Excel对象</p>
+<p>①Application相当于建立一个Excel程序，想象成电脑上打开了Excel程序</p>
+<p>②Workbooks是application的一个属性，是当前Excel进程打开的所有工作簿数组，使用wokbooks[1]、workbooks[2]可以访问他们。</p>
+<p>③Workbook是类型，是工作簿，一个Excel文件就是一个工作簿。</p>
+<p>④worksheet是里面包含的表，你在桌面右键新建个excel，默认里面就有三个sheet，sheet1、sheet2、sheet3.</p>
+<p>2.在winform窗体应用中实现</p>
+<p>①导入</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">      DataSet ds = <span class="keyword">new</span> DataSet();</span><br><span class="line">      DataTable dt = <span class="literal">null</span>;</span><br><span class="line">OpenFileDialog sflg = <span class="keyword">new</span> OpenFileDialog();</span><br><span class="line">      sflg.Filter = <span class="string">"Excel(*.xlsx)|*.xlsx"</span>;</span><br><span class="line">      <span class="keyword">if</span> (sflg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      FileStream fs = <span class="keyword">new</span> FileStream(sflg.FileName, FileMode.Open, FileAccess.Read);</span><br><span class="line">      XSSFWorkbook book = <span class="keyword">new</span> XSSFWorkbook(fs);</span><br><span class="line">      <span class="keyword">int</span> sheetCount = book.NumberOfSheets;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> sheetIndex = <span class="number">0</span>; sheetIndex &lt; sheetCount; sheetIndex++)</span><br><span class="line">      &#123;</span><br><span class="line">          NPOI.SS.UserModel.ISheet sheet = book.GetSheetAt(sheetIndex);</span><br><span class="line">          <span class="keyword">if</span> (sheet == <span class="literal">null</span>) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">          NPOI.SS.UserModel.IRow row = sheet.GetRow(<span class="number">0</span>);</span><br><span class="line">          <span class="keyword">if</span> (row == <span class="literal">null</span>) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">int</span> firstCellNum = row.FirstCellNum;</span><br><span class="line">          <span class="keyword">int</span> lastCellNum = row.LastCellNum;</span><br><span class="line">          <span class="keyword">if</span> (firstCellNum == lastCellNum) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">          dt = <span class="keyword">new</span> DataTable(sheet.SheetName);</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = firstCellNum; i &lt; lastCellNum; i++)</span><br><span class="line">          &#123;</span><br><span class="line">              dt.Columns.Add(row.GetCell(i).StringCellValue, <span class="keyword">typeof</span>(<span class="keyword">string</span>));</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= sheet.LastRowNum; i++)</span><br><span class="line">          &#123;</span><br><span class="line">              DataRow newRow = dt.Rows.Add();</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = firstCellNum; j &lt; lastCellNum; j++)</span><br><span class="line">              &#123;</span><br><span class="line">                  newRow[j] = sheet.GetRow(i).GetCell(j);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          ds.Tables.Add(dt);</span><br><span class="line">          dataGridView1.DataSource = ds.Tables[<span class="number">0</span>];</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>②导出</p>
+<p>​            </p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">SaveFileDialog sflg = <span class="keyword">new</span> SaveFileDialog();</span><br><span class="line">sflg.Filter = <span class="string">"Excel(*.xlsx)|*.xlsx"</span>;</span><br><span class="line"><span class="keyword">if</span> (sflg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">XSSFWorkbook workbook = <span class="keyword">new</span> XSSFWorkbook();</span><br><span class="line">ISheet sheet = workbook.CreateSheet();</span><br><span class="line">XSSFCellStyle style = (XSSFCellStyle)workbook.CreateCellStyle();</span><br><span class="line">style.BorderBottom = NPOI.SS.UserModel.BorderStyle.Thin;</span><br><span class="line">style.BorderLeft = NPOI.SS.UserModel.BorderStyle.Thin;</span><br><span class="line">style.BorderRight = NPOI.SS.UserModel.BorderStyle.Thin;</span><br><span class="line">style.BorderTop = NPOI.SS.UserModel.BorderStyle.Thin;</span><br><span class="line">style.Alignment = HorizontalAlignment.Center;</span><br><span class="line">style.VerticalAlignment = VerticalAlignment.Center;</span><br><span class="line"><span class="comment">//填充表头</span></span><br><span class="line">IRow dataRow = sheet.CreateRow(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (DataGridViewTextBoxColumn column <span class="keyword">in</span> dataGridView1.Columns)</span><br><span class="line">&#123;</span><br><span class="line">    dataRow.CreateCell(column.Index).SetCellValue(column.Name);</span><br><span class="line">    sheet.AutoSizeColumn(column.Index);<span class="comment">//列宽自适应</span></span><br><span class="line">    dataRow.GetCell(column.Index).CellStyle = style;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​            </p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//填充内容</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; dataGridView1.Rows.Count; i++)</span><br><span class="line">&#123;</span><br><span class="line">    dataRow = sheet.CreateRow(i);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; dataGridView1.Columns.Count; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        dataRow.CreateCell(j).SetCellValue(dataGridView1.Rows[i<span class="number">-1</span>].Cells[j].Value.ToString());</span><br><span class="line">        dataRow.GetCell(j).CellStyle = style;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//保存</span></span><br><span class="line"><span class="keyword">using</span> (MemoryStream ms = <span class="keyword">new</span> MemoryStream())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> (FileStream fs = <span class="keyword">new</span> FileStream(sflg.FileName, FileMode.Create, FileAccess.Write))</span><br><span class="line">    &#123;</span><br><span class="line">        workbook.Write(fs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -480,7 +485,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C#</a>
+            <a href="/tags/C-学习/" rel="tag"># C#学习</a>
           
         </div>
       
@@ -493,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/11/与中年油腻男强拆笔记本总结/" rel="next" title="与中年油腻男强拆笔记本总结">
-                <i class="fa fa-chevron-left"></i> 与中年油腻男强拆笔记本总结
+              <a href="/2019/03/20/C-学习（一）/" rel="next" title="C#学习（一）">
+                <i class="fa fa-chevron-left"></i> C#学习（一）
               </a>
             
           </div>
@@ -583,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -639,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-学习记录-一"><span class="nav-number">1.</span> <span class="nav-text">C#学习记录(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类abstract"><span class="nav-number">1.1.</span> <span class="nav-text">抽象类abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型generic"><span class="nav-number">1.2.</span> <span class="nav-text">泛型generic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#foreach遍历"><span class="nav-number">1.3.</span> <span class="nav-text">foreach遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#委托"><span class="nav-number">1.4.</span> <span class="nav-text">委托</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#委托实例："><span class="nav-number">1.4.0.1.</span> <span class="nav-text">委托实例：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">1.5.</span> <span class="nav-text">Lambda表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型委托"><span class="nav-number">1.6.</span> <span class="nav-text">泛型委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引器"><span class="nav-number">1.7.</span> <span class="nav-text">索引器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-学习-二"><span class="nav-number">1.</span> <span class="nav-text">C#学习(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件-通过委托实现"><span class="nav-number">1.1.</span> <span class="nav-text">事件(通过委托实现)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件的语言支持："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">事件的语言支持：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。"><span class="nav-number">1.1.0.1.1.</span> <span class="nav-text">用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序集"><span class="nav-number">1.2.</span> <span class="nav-text">程序集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是程序集？"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">什么是程序集？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序集的包含"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">程序集的包含</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用程序集的好处？"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">使用程序集的好处？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何添加程序集的引用？"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">如何添加程序集的引用？</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#反射-Reflection"><span class="nav-number">1.3.</span> <span class="nav-text">反射(Reflection)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-中的invoke-方法"><span class="nav-number">1.4.</span> <span class="nav-text">c#中的invoke()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-可扩展标记语言"><span class="nav-number">1.5.</span> <span class="nav-text">XML(可扩展标记语言)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本语法"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linq-To-XML：写"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">Linq To XML：写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excel的导入与导出"><span class="nav-number">1.6.</span> <span class="nav-text">Excel的导入与导出</span></a></li></div>
             
 
           </div>
