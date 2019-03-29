@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="Codexiaoyi的个人博客">
 <meta property="og:description" content="C#学习(二)事件(通过委托实现)1.加了event关键字实现事件机制的好处：用了event事件，不可以修改事件已经注册的值；不可以冒充进行事件通知了。 事件的语言支持：用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。1.定义使用event关键字的事件。 1public event EventHandler&amp;lt;FileListArgs&amp;gt; Progress; 2.想要引发事件时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-20T01:39:33.021Z">
+<meta property="og:updated_time" content="2019-03-29T09:36:09.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#学习（二）">
 <meta name="twitter:description" content="C#学习(二)事件(通过委托实现)1.加了event关键字实现事件机制的好处：用了event事件，不可以修改事件已经注册的值；不可以冒充进行事件通知了。 事件的语言支持：用于定义事件以及订阅或取消订阅事件的语法是对委托语法的扩展。1.定义使用event关键字的事件。 1public event EventHandler&amp;lt;FileListArgs&amp;gt; Progress; 2.想要引发事件时">
@@ -421,7 +421,23 @@
 <h4 id="如何添加程序集的引用？"><a href="#如何添加程序集的引用？" class="headerlink" title="如何添加程序集的引用？"></a>如何添加程序集的引用？</h4><p>1.添加路径、项目引用、GAC（全局程序集缓存）</p>
 <p>2.不能循环添加引用</p>
 <p>3.在c#中添加其他语言编写的dll文件的引用。（参考P/Invoke，在.net中调用非程序集的dll） extern</p>
-<h2 id="反射-Reflection"><a href="#反射-Reflection" class="headerlink" title="反射(Reflection)"></a>反射(Reflection)</h2><h2 id="c-中的invoke-方法"><a href="#c-中的invoke-方法" class="headerlink" title="c#中的invoke()方法"></a>c#中的invoke()方法</h2><h2 id="XML-可扩展标记语言"><a href="#XML-可扩展标记语言" class="headerlink" title="XML(可扩展标记语言)"></a>XML(可扩展标记语言)</h2><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>1.第一行要有编码格式标记</p>
+<h2 id="反射-Reflection"><a href="#反射-Reflection" class="headerlink" title="反射(Reflection)"></a>反射(Reflection)</h2><p>1.概念：反射就是动态获取程序集的元数据(提供程序集的类型信息)来操作类型的。</p>
+<p>2.Type类实现反射的一个人重要的类，通过它我们可以获取类中的所有信息包括方法、属性等。可以动态调用类的属性、方法。Type时对类的描述。</p>
+<p>3.Type类型的介绍</p>
+<p>​    ①通过类获得Type：Type t=typeof(Person)</p>
+<p>​    ②通过对象获得类的Type：Type t=p.GetType</p>
+<p>4.动态加载程序集并且调用类型的成员</p>
+<p>​    ①根据程序的路径，动态的加载一个程序集。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Assembly asm = Assembly.LoadFile(<span class="string">"绝对路径"</span>);</span><br></pre></td></tr></table></figure>
+<p>​    ②获取该程序集中的所有类型。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Type[] types = asm.GetTypes();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i &lt; types.length ; i++)</span><br><span class="line">&#123;</span><br><span class="line">	Console.WriteLine(types[i].FullName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    ③获取所有的public的类型</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Type[] types = asm.GetExportedTypes();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i &lt; types.length ; i++)</span><br><span class="line">&#123;</span><br><span class="line">	Console.WriteLine(types[i].FullName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    ④获取指定的类型</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Type typePerson = asm.GetType(<span class="string">"程序集名称.类名"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="c-中的invoke-方法"><a href="#c-中的invoke-方法" class="headerlink" title="c#中的invoke()方法"></a>c#中的invoke()方法</h2><p>​    ⑤调用Person类中的方法：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">先获取方法：MethodInfo method = typePerson.GetMethod(<span class="string">"方法名"</span>);</span><br><span class="line">根据指定的Tyoe，创建一个该类型的对象：<span class="keyword">object</span> obj = Activator.CreateInstance(typePerson);</span><br><span class="line">在调用该方法：method.Invoke(obj,<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="XML-可扩展标记语言"><a href="#XML-可扩展标记语言" class="headerlink" title="XML(可扩展标记语言)"></a>XML(可扩展标记语言)</h2><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>1.第一行要有编码格式标记</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="GB2312"?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>2.取消&gt;的标签作用</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;![CDATA[xiang&lt;sss&gt;lll&lt;ooo&gt;]]&gt;</span><br></pre></td></tr></table></figure>
